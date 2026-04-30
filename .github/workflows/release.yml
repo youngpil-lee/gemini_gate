@@ -10,7 +10,7 @@ permissions:
     contents: write
 
 env:
-    PLUGIN_NAME: easy-gate  # manifest.json의 id와 일치시킴
+    PLUGIN_NAME: gemini-gate  # manifest.json의 id와 일치시킴
 
 jobs:
     build:

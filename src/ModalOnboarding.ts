@@ -13,9 +13,9 @@ export class ModalOnBoarding extends Modal {
 
     onOpen() {
         const { contentEl } = this
-        contentEl.createEl('h3', { text: 'Welcome to Easy Gate' })
+        contentEl.createEl('h3', { text: 'Welcome to Gemini Gate' })
         contentEl.createEl('p', {
-            text: 'Easy Gate is a plugin that allows you to embed any website in Obsidian. You will never have to leave Obsidian again!'
+            text: 'Gemini Gate is a plugin that allows you to embed any website in Obsidian. You will never have to leave Obsidian again!'
         })
 
         contentEl.createEl('p', {

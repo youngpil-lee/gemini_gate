@@ -1,7 +1,7 @@
 /**
  * Modals Module Index
  *
- * Easy Gate 모달 컴포넌트의 메인 진입점입니다.
+ * Gemini Gate 모달 컴포넌트의 메인 진입점입니다.
  */
 
 // Analysis Modal

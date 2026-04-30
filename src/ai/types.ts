@@ -1,5 +1,5 @@
 /**
- * AI Feature Types for Easy Gate v2.0
+ * AI Feature Types for Gemini Gate v2.0
  *
  * 이 파일은 AI 기능에 필요한 모든 타입 정의를 포함합니다.
  */

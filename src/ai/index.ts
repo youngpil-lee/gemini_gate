@@ -1,7 +1,7 @@
 /**
  * AI Module Index
  *
- * Easy Gate AI 기능의 메인 진입점입니다.
+ * Gemini Gate AI 기능의 메인 진입점입니다.
  */
 
 // Types

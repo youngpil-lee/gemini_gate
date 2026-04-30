@@ -98,7 +98,7 @@ div[data-gate-id] .setting-item-name {
     text-overflow: ellipsis;
 }
 
-/* --- Easy Gate New Styles --- */
+/* --- Gemini Gate New Styles --- */
 
 .gate-top-bar {
     background-color: var(--background-secondary);
@@ -228,16 +228,16 @@ div[data-gate-id] .setting-item-name {
 }
 
 /* AI & Clip Button Styles */
-.easy-gate-clip-btn-wrapper,
-.easy-gate-ai-btn-wrapper {
+.gemini-gate-clip-btn-wrapper,
+.gemini-gate-ai-btn-wrapper {
     flex-shrink: 0 !important;
     display: inline-flex !important;
     align-items: center;
     gap: 0;
 }
 
-.easy-gate-clip-btn,
-.easy-gate-ai-btn {
+.gemini-gate-clip-btn,
+.gemini-gate-ai-btn {
     height: 26px !important;
     padding: 0 8px !important;
     font-size: 14px !important;
@@ -249,8 +249,8 @@ div[data-gate-id] .setting-item-name {
     transition: background 0.2s;
 }
 
-.easy-gate-clip-dropdown-btn,
-.easy-gate-ai-dropdown-btn {
+.gemini-gate-clip-dropdown-btn,
+.gemini-gate-ai-dropdown-btn {
     height: 26px !important;
     padding: 0 5px !important;
     font-size: 9px !important;
@@ -261,10 +261,10 @@ div[data-gate-id] .setting-item-name {
     transition: background 0.2s;
 }
 
-.easy-gate-clip-btn:hover,
-.easy-gate-ai-btn:hover,
-.easy-gate-clip-dropdown-btn:hover,
-.easy-gate-ai-dropdown-btn:hover {
+.gemini-gate-clip-btn:hover,
+.gemini-gate-ai-btn:hover,
+.gemini-gate-clip-dropdown-btn:hover,
+.gemini-gate-ai-dropdown-btn:hover {
     background: var(--interactive-hover);
 }
 
