@@ -1,0 +1,35 @@
+import { getSvgIcon } from './getSvgIcon'
+import { GateFrameOption } from '../GateOptions'
+
+export const normalizeGateOption = (gate: Partial<GateFrameOption>): GateFrameOption => {
+    if (gate.url === '' || gate.url === undefined) {
+        throw new Error('URL is required')
+    }
+
+    if (gate.id === '' || gate.id === undefined) {
+        let seedString = gate.url!
+        if (gate.profileKey != undefined && gate.profileKey !== 'open-gate' && gate.profileKey !== '') {
+            seedString += gate.profileKey
+        }
+        // btoa()는 ASCII만 지원하므로 UTF-8 URL을 위해 encodeURIComponent 사용
+        gate.id = btoa(encodeURIComponent(seedString))
+    }
+
+    if (gate.profileKey === '' || gate.profileKey === undefined) {
+        gate.profileKey = 'open-gate'
+    }
+
+    if (gate.zoomFactor === 0 || gate.zoomFactor === undefined) {
+        gate.zoomFactor = 1
+    }
+
+    if (gate.icon === '' || gate.icon === undefined) {
+        gate.icon = gate.url?.startsWith('http') ? getSvgIcon(gate.url) : 'globe'
+    }
+
+    if (gate.title === '' || gate.title === undefined) {
+        gate.title = gate.url
+    }
+
+    return <GateFrameOption>gate
+}

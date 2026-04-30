@@ -1,0 +1,49 @@
+name: Build obsidian plugin
+
+on:
+    push:
+        tags:
+            - '*'
+
+# 🔑 권한 설정 - "Resource not accessible by integration" 오류 해결
+permissions:
+    contents: write
+
+env:
+    PLUGIN_NAME: easy-gate  # manifest.json의 id와 일치시킴
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Use bun
+              uses: oven-sh/setup-bun@v2
+
+            - name: Build
+              run: |
+                  bun install
+                  bun run build
+
+            - name: Prepare release files
+              run: |
+                  mkdir ${{ env.PLUGIN_NAME }}
+                  cp main.js manifest.json styles.css ${{ env.PLUGIN_NAME }}
+                  zip -r ${{ env.PLUGIN_NAME }}.zip ${{ env.PLUGIN_NAME }}
+                  ls -la
+
+            # 최신 릴리즈 액션 사용 (deprecated 액션 대체)
+            - name: Create Release
+              uses: softprops/action-gh-release@v2
+              with:
+                  files: |
+                      main.js
+                      manifest.json
+                      styles.css
+                      ${{ env.PLUGIN_NAME }}.zip
+                  draft: false
+                  prerelease: false
+                  generate_release_notes: true
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

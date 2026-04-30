@@ -1,0 +1,305 @@
+/* Existing Styles */
+.open-gate-view {
+    padding: 0 !important;
+    overflow: hidden !important;
+    /* Flex layout for top bar + frame */
+    display: flex;
+    flex-direction: column;
+}
+
+.open-gate-view .open-gate-iframe,
+.open-gate-view .open-gate-webview {
+    width: 100%;
+    /* Flex grow to fill remaining space */
+    height: auto;
+    flex-grow: 1;
+    border: none;
+    background-color: #fff;
+}
+
+.gate-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.open-gate-mobile-warning {
+    background: #b38c1d;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.open-gate-mobile-link {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.open-gate--form-field--column .setting-item-control,
+.open-gate--form-field--column .setting-item-control textarea,
+.open-gate--form-field .setting-item-control input[type='text'] {
+    width: 100%;
+}
+
+.open-gate--form-field--column .setting-item-control textarea{
+    min-height: 80px;
+}
+
+.open-gate--form-field--column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.open-gate--advanced-options {
+    border-top: 1px solid var(--background-modifier-border);
+    padding: 0.75em 0;
+    display: none;
+}
+
+.open-gate--advanced-options--show {
+    display: block;
+}
+
+.open-gate--quick-list-item {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.open-gate--quick-list-item.active,
+.open-gate--quick-list-item:hover {
+    background: var(--background-modifier-hover);
+}
+
+div[data-gate-id] .setting-item {
+    overflow: hidden;
+}
+
+div[data-gate-id] .setting-item-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.open-gate--setting--gate .setting-item-info {
+    width: 100%;
+    overflow: hidden;
+}
+.open-gate--setting--gate .setting-item-description{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* --- Easy Gate New Styles --- */
+
+.gate-top-bar {
+    background-color: var(--background-secondary);
+    border-bottom: 1px solid var(--background-modifier-border);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.gate-tab-bar {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    background-color: var(--background-primary);
+    border-bottom: 1px solid var(--background-modifier-border);
+    padding: 0;
+    scrollbar-width: none; /* Hide scrollbar */
+}
+.gate-tab-bar::-webkit-scrollbar {
+    display: none;
+}
+
+.gate-tab {
+    padding: 5px 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid var(--background-modifier-border);
+    font-size: 11px;
+    opacity: 0.7;
+    max-width: 140px;
+    min-width: 60px;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.gate-tab:hover {
+    background-color: var(--background-modifier-hover);
+    opacity: 1;
+}
+
+.gate-tab.active {
+    background-color: var(--background-secondary);
+    opacity: 1;
+    font-weight: 600;
+    border-bottom: 2px solid var(--interactive-accent);
+}
+
+.gate-tab-icon {
+    margin-right: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.gate-tab-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex-grow: 1;
+}
+
+/* Gate Tab Close Button (X) */
+.gate-tab-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    margin-left: 6px;
+    border-radius: 3px;
+    opacity: 0;
+    transition: all 0.2s ease;
+    color: var(--text-muted);
+}
+
+.gate-tab:hover .gate-tab-close {
+    opacity: 0.7;
+}
+
+.gate-tab-close:hover {
+    opacity: 1 !important;
+    background-color: var(--background-modifier-error);
+    color: var(--text-on-accent);
+}
+
+.gate-control-row {
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.gate-address-input {
+    flex: 1 1 120px;
+    min-width: 120px;
+    max-width: 300px;
+    height: 26px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.gate-divider {
+    width: 1px;
+    height: 16px;
+    background-color: var(--background-modifier-border);
+    margin: 0 2px;
+    flex-shrink: 0;
+}
+
+/* Enhance dropdown and button alignment */
+.gate-control-row select {
+    height: 26px;
+    font-size: 11px;
+    padding: 0 4px;
+    flex-shrink: 0;
+}
+.gate-control-row button {
+    height: 26px;
+    padding: 0 6px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    font-size: 12px;
+}
+
+/* AI & Clip Button Styles */
+.easy-gate-clip-btn-wrapper,
+.easy-gate-ai-btn-wrapper {
+    flex-shrink: 0 !important;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 0;
+}
+
+.easy-gate-clip-btn,
+.easy-gate-ai-btn {
+    height: 26px !important;
+    padding: 0 8px !important;
+    font-size: 14px !important;
+    background: var(--interactive-normal);
+    border: 1px solid var(--background-modifier-border);
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.easy-gate-clip-dropdown-btn,
+.easy-gate-ai-dropdown-btn {
+    height: 26px !important;
+    padding: 0 5px !important;
+    font-size: 9px !important;
+    background: var(--interactive-normal);
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.easy-gate-clip-btn:hover,
+.easy-gate-ai-btn:hover,
+.easy-gate-clip-dropdown-btn:hover,
+.easy-gate-ai-dropdown-btn:hover {
+    background: var(--interactive-hover);
+}
+
+/* Popup Modal */
+.gate-popup-modal {
+   max-width: 90vw !important;
+   max-height: 90vh !important;
+   width: 1200px;
+   height: 800px;
+}
+.gate-popup-modal .modal-content {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.gate-popup-header {
+    padding: 10px 15px;
+    background-color: var(--background-secondary);
+    border-bottom: 1px solid var(--background-modifier-border);
+    font-weight: bold;
+}
+
+.gate-popup-body {
+    flex-grow: 1;
+    position: relative;
+    background: #fff;
+    width: 100%;
+}
+
+.gate-popup-body iframe,
+.gate-popup-body webview {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
